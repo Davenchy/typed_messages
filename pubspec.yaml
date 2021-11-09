@@ -1,5 +1,6 @@
 name: typed_messages
 description: A simple piece of data with encoder and decoder
+repository: https://github.com/Davenchy/typed_messages
 version: 1.0.0
 
 environment:
