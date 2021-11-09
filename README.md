@@ -91,8 +91,6 @@ final Uint8List bytes = Message.encode(message);
 final ClientInfoMessage? decodedMessage = Message.decode(bytes);
 ```
 
-`final ClientInfoMessage? message = Message.decode(bytes)`;
-
 ### Method2 using __MessagesPrototypes__ singleton and prototypes directly
 
 ```dart
