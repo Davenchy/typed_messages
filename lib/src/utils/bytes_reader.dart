@@ -19,6 +19,13 @@ class BytesReader {
     return value;
   }
 
+  /// read int of [byteLength] at [offset] and compare it with [value]
+  ///
+  /// returns __true__ if [value] is equal to the read value
+  isEqual(int value, int offset, int byteLength) {
+    return readUint(offset, byteLength) == value;
+  }
+
   /// read single byte at `offset`
   int readSingleByte(int offset) => readBytes(offset, 1)[0];
 

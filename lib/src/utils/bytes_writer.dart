@@ -32,9 +32,12 @@ class BytesWriter {
 
   /// write `value` as Uint of `byteLength`
   void writeUint(int value, int byteLength) {
-    for (int i = 0; i < byteLength; i++) {
-      _buffer[_offset++] = (value >> (i * 8)) & 0xFF;
+    final bytes = Uint8List(byteLength);
+    for (int i = 0; i < bytes.length; i++) {
+      bytes[i] = (value >> (i * 8)) & 0xFF;
     }
+    _buffer.setRange(_offset, _offset + bytes.length, bytes.reversed);
+    _offset += byteLength;
   }
 
   void writeText(String text) {
